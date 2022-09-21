@@ -10,60 +10,25 @@ Memory Usage: 6.9 MB, less than 61.56% of Go online submissions for Binary Searc
 21/09/2022
 */
 func BinarySearch(nums []int, target int) int {
-	start := 0
-	end := len(nums)
-	sudoLen := end
+	sIndex := 0
+	lIndex := len(nums) - 1
 	index := -1
 	for {
-		if sudoLen <= 0 {
+		cIndex := (sIndex + lIndex) / 2
+		if sIndex > lIndex {
 			break
-		} else if sudoLen == 1 {
-			if nums[start] == target {
-				index = start
-			}
-			break
-		} else if sudoLen == 2 {
-			if nums[start] == target {
-				index = start
-			} else if nums[start+1] == target {
-				index = start + 1
-			}
-			break
-		} else {
-			isOdd := sudoLen%2 == 1
-			middle1 := start + (sudoLen / 2)
-			if isOdd {
-				if nums[middle1] == target {
-					index = middle1
-					break
-				} else if target < nums[middle1] {
-					// / focus left side of slice
-					sudoLen = middle1 - start
-					end = middle1
-				} else {
-					// / focus right side of slice
-					sudoLen = (end - middle1) + 1
-					start = middle1
-				}
+		}
+		if nums[cIndex] != target {
+			if nums[cIndex] > target {
+				lIndex = cIndex - 1
 			} else {
-				middle2 := middle1 + 1
-				if nums[middle1] == target {
-					index = middle1
-					break
-				} else if nums[middle2] == target {
-					index = middle2
-					break
-				} else if target < nums[middle1] {
-					// / focus left side of slice
-					sudoLen = middle1 - start
-					end = middle1
-				} else {
-					// / focus right side of slice
-					sudoLen = end - middle2
-					start = middle2
-				}
+				sIndex = cIndex + 1
 			}
+		} else {
+			index = cIndex
+			break
 		}
 	}
+
 	return index
 }
