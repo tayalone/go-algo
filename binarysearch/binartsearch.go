@@ -5,8 +5,8 @@ BinarySearch : Given an array of integers nums which is sorted in ascending orde
 You must write an algorithm with O(log n) runtime complexity.
 
 This function Performance
-Runtime: 78 ms, faster than 13.89% of Go online submissions for Binary Search.
-Memory Usage: 6.9 MB, less than 61.56% of Go online submissions for Binary Search.
+Runtime: 27 ms, faster than 98.81% of Go online submissions for Binary Search.
+Memory Usage: 6.6 MB, less than 94.35% of Go online submissions for Binary Search.
 21/09/2022
 */
 func BinarySearch(nums []int, target int) int {
