@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/tayalone/go-algo/twopointers"
 )
 
-func main() {
-	twopointers.SortedSquares([]int{-4, -1, 0, 3, 10})
+// nums: []int{1, 2, 3, 4, 5, 6, 7},
+// 				k:    3,
 
+func main() {
 	fmt.Println("Hello Algo 101")
 }
