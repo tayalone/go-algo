@@ -20,24 +20,3 @@ func SearchInsert(nums []int, target int) int {
 
 	return sIndex
 }
-
-func sortedSquares(nums []int) []int {
-	n := []int{}
-	p := []int{}
-
-	for i := 0; i < len(nums); i++ {
-		v := nums[i]
-		isN := v < 0
-		if isN {
-			if len(n) == 0 {
-				n = append(n, v)
-			} else {
-				n = append([]int{v}, n...)
-			}
-		} else {
-			p = append(p, v)
-		}
-
-	}
-	return append(p, n...)
-}
