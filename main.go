@@ -10,9 +10,6 @@ import (
 // 				k:    3,
 
 func main() {
-	binarysearch.TargetIndices(
-		[]int{1, 2, 5, 2, 3},
-		2,
-	)
+	binarysearch.MySqrt(6)
 	fmt.Println("Hello Algo 101")
 }
