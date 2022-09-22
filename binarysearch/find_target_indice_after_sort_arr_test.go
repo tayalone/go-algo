@@ -40,6 +40,14 @@ func TestTargetIndices(t *testing.T) {
 			},
 			want: []int{4},
 		},
+		{
+			name: "Case 4",
+			args: args{
+				nums:   []int{1, 1, 1, 1, 1, 2},
+				target: 1,
+			},
+			want: []int{0, 1, 2, 3, 4},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
