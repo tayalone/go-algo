@@ -9,7 +9,6 @@ func MySqrt(x int) int {
 	for l <= r {
 		pivot := (r + l) / 2
 		pow := pivot * pivot
-
 		if pow <= x && (pivot+1)*(pivot+1) > x {
 			result = pivot
 			break
