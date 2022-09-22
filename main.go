@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/tayalone/go-algo/binarysearch"
+	"github.com/tayalone/go-algo/twopointers"
 )
 
 func main() {
-	binarysearch.SearchInsert([]int{1, 3, 5, 6}, 0)
+	twopointers.SortedSquares([]int{-4, -1, 0, 3, 10})
 
 	fmt.Println("Hello Algo 101")
 }
