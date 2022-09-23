@@ -1,31 +1,23 @@
 package twopointers
 
+/*MoveZeroes return []int which zero laydown @ end of slide*/
 func MoveZeroes(nums []int) []int {
-	// s := 0
-	// fmt.Println("old nums", nums)
-	// for s < len(nums)-1 {
-	// 	sv := nums[s]
-	// 	lv := nums[s+1]
-	// 	fmt.Println("s", s, "s+1", s+1, "sv", sv, "lv", lv)
-	// 	fmt.Println(nums)
-	// 	if sv == 0 || lv == 0 {
-	// 		nums[s] = lv
-	// 		nums[s+1] = sv
-	// 	}
-	// 	fmt.Println(nums)
+	s := 0
+	l := len(nums) - 1
 
-	// 	s++
-	// }
-
-	// for i := len(nums) - 2; i > 0; i-- {
-	// 	c := nums[i]
-
-	// 	if (c == 0){
-	// 		continue
-	// 	}
-	// 	// for
-
-	// }
+	for s < l {
+		if nums[s] == 0 {
+			for i := s; i < l; i++ {
+				tmp := nums[i]
+				nums[i] = nums[i+1]
+				nums[i+1] = tmp
+			}
+			l--
+		}
+		if nums[s] > 0 {
+			s++
+		}
+	}
 
 	return nums
 }
