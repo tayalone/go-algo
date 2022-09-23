@@ -8,6 +8,7 @@ import (
 
 /*
 TargetIndices return slice of target index
+Write 1st time
 */
 func TargetIndices(nums []int, target int) []int {
 	s := sorts.BinaryInsertionSort(nums)
