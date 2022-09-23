@@ -32,7 +32,8 @@ func TestMissingNumber(t *testing.T) {
 				nums: []int{9, 6, 4, 2, 3, 5, 7, 0, 1},
 			},
 			want: 8,
-		}, {
+		},
+		{
 			name: "Case 4",
 			args: args{
 				nums: []int{0, 2, 3},

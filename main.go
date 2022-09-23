@@ -8,6 +8,8 @@ import (
 // 				k:    3,
 
 func main() {
-	fmt.Println(binarysearch.MissingNumber([]int{0, 2, 3}))
+	// fmt.Println(twopointers.MoveZeroes([]int{0, 1, 0, 3, 12}))
+	fmt.Println(1 ^ 0)
+
 	fmt.Println("Hello Algo 101")
 }
