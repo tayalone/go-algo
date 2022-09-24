@@ -10,7 +10,7 @@ import (
 // 				k:    3,
 
 func main() {
-	fmt.Println(twopointers.MoveZeroes([]int{0, 1, 0, 3, 12}))
+	fmt.Println(twopointers.ReverseWords("Let's take LeetCode contest"))
 	// fmt.Println(1 ^ 1)
 
 	fmt.Println("Hello Algo 101")
