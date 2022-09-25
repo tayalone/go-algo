@@ -6,26 +6,25 @@ func RemoveNthFromEnd(head *ListNode, n int) *ListNode {
 		return nil
 	}
 
-	// cLink := head.Next
-	// fLink := head.Next
-	// lLink := head
+	cLink := head.Next
+	fLink := head.Next
+	lLink := head
 
-	// counter := 2
+	counter := 2
 
-	// for cLink != nil {
-	// 	if cLink.Next == nil {
-	// 		if counter == n {
-	// 			head = head.Next
-	// 			break
-	// 		} else {
-	// 			lLink.Next = fLink.Next
-	// 			break
-	// 		}
-	// 	}
-	// 	cLink = cLink.Next
-	// 	counter++
-	// }
+	for cLink != nil {
+		if cLink.Next == nil {
+			if counter == n {
+				head = head.Next
+				break
+			} else {
+				lLink.Next = fLink.Next
+				break
+			}
+		}
+		cLink = cLink.Next
+		counter++
+	}
 
 	return head
-
 }
