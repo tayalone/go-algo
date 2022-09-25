@@ -17,6 +17,5 @@ func SortedSquares(nums []int) []int {
 			rIndex--
 		}
 	}
-
 	return r
 }
