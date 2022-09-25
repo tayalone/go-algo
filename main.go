@@ -10,7 +10,19 @@ import (
 // 				k:    3,
 
 func main() {
-	fmt.Println(twopointers.ReverseWords("Let's take LeetCode contest"))
+	fmt.Println(twopointers.RemoveNthFromEnd(&twopointers.ListNode{
+		Val: 1,
+		Next: &twopointers.ListNode{
+			Val: 2,
+			Next: &twopointers.ListNode{
+				Val: 3,
+				Next: &twopointers.ListNode{
+					Val:  4,
+					Next: nil,
+				},
+			},
+		},
+	}, 1))
 	// fmt.Println(1 ^ 1)
 
 	fmt.Println("Hello Algo 101")
