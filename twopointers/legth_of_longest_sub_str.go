@@ -1,6 +1,10 @@
 package twopointers
 
-/*LengthOfLongestSubstring is return int*/
+/*
+LengthOfLongestSubstring is return int
+Runtime: 19 ms, faster than 41.42% of Go online submissions for Longest Substring Without Repeating Characters.
+Memory Usage: 4.7 MB, less than 28.20% of Go online submissions for Longest Substring Without Repeating Characters.
+*/
 func LengthOfLongestSubstring(s string) int {
 	rng := len(s)
 	if rng < 2 {
@@ -19,12 +23,11 @@ func LengthOfLongestSubstring(s string) int {
 		if !foundFp || (foundFp && (value < startIndex)) {
 			ht[string(key)] = fp
 			tr = append(tr, key)
-
 			if len(tr) > counter {
 				counter = len(tr)
 			}
 		} else {
-			if startIndex == value {
+			if value == startIndex {
 				/* เจอซ้ำตัวแรกของ Poiner */
 				ht[string(key)] = fp
 				startIndex = startIndex + 1
@@ -35,11 +38,22 @@ func LengthOfLongestSubstring(s string) int {
 				startIndex = fp
 				tr = []rune{key}
 			} else {
-				ht[string(key)] = value + 1
-				startIndex = startIndex + 1
-				if startIndex+1 <= rng-1 {
-					tr = append(runes[startIndex+1:fp], key)
+				// ตรงกลาง
+				if fp >= rng-1 {
+					// ขอบ
+					continue
 				}
+				if runes[fp] == runes[fp+1] {
+					// ถ้าจุดที่ชี้กับถัดไปซ้ำกัน
+					ht[string(key)] = fp + 1
+					startIndex = fp + 1
+					fp++
+					tr = []rune{runes[startIndex]}
+					continue
+				}
+				startIndex = value + 1
+				ht[string(key)] = fp
+				tr = append(runes[startIndex:fp], key)
 			}
 		}
 	}
