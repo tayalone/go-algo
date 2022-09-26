@@ -75,10 +75,17 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 		// 	},
 		// 	want: 5,
 		// },
+		// {
+		// 	name: "Case 8",
+		// 	args: args{
+		// 		s: "ohvhjdml",
+		// 	},
+		// 	want: 6,
+		// },
 		{
-			name: "Case 8",
+			name: "Case 9",
 			args: args{
-				s: "ohvhjdml",
+				s: "qrsvbspk",
 			},
 			want: 6,
 		},

@@ -29,7 +29,7 @@ func LengthOfLongestSubstring(s string) int {
 				ht[string(key)] = fp
 				startIndex = startIndex + 1
 				tr = append(runes[startIndex:fp], key)
-			} else if startIndex < fp-1 {
+			} else if value == fp-1 {
 				/* ตรงกับตัวสุดท้ย */
 				ht[string(key)] = fp
 				startIndex = fp
