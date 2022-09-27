@@ -58,24 +58,3 @@ func TestFloodFill(t *testing.T) {
 		})
 	}
 }
-
-func Test_trans(t *testing.T) {
-	type args struct {
-		image    *[][]int
-		sr       int
-		sc       int
-		ogValue  int
-		newValue int
-	}
-	tests := []struct {
-		name string
-		args args
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			trans(tt.args.image, tt.args.sr, tt.args.sc, tt.args.ogValue, tt.args.newValue)
-		})
-	}
-}
