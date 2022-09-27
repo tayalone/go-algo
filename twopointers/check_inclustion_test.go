@@ -104,3 +104,73 @@ func Test_makeMap(t *testing.T) {
 		})
 	}
 }
+
+func Test_cheateCheckInclusion(t *testing.T) {
+	type args struct {
+		s1 string
+		s2 string
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+		{
+			name: "case 0",
+			args: args{
+				s1: "hello",
+				s2: "ooolleoooleh",
+			},
+			want: false,
+		},
+		{
+			name: "case -2",
+			args: args{
+				s1: "abc",
+				s2: "abc",
+			},
+			want: true,
+		},
+		{
+			name: "case -1",
+			args: args{
+				s1: "abc",
+				s2: "bbbca",
+			},
+			want: true,
+		},
+
+		{
+			name: "case 1",
+			args: args{
+				s1: "ab",
+				s2: "eidbaooo",
+			},
+			want: true,
+		},
+		{
+			name: "case 2",
+			args: args{
+				s1: "ab",
+				s2: "eidboaoo",
+			},
+			want: false,
+		},
+		{
+			name: "case 3",
+			args: args{
+				s1: "a",
+				s2: "ab",
+			},
+			want: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := cheateCheckInclusion(tt.args.s1, tt.args.s2); got != tt.want {
+				t.Errorf("cheateCheckInclusion() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
