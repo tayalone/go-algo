@@ -1,4 +1,4 @@
-package linklist
+package linkedlist
 
 import (
 	"reflect"
@@ -26,7 +26,7 @@ func ldfs(root *ds.PerfectNode) []string {
 	return b
 }
 
-func makeWant(root *ds.PerfectNode) []string {
+func makeWantPBT(root *ds.PerfectNode) []string {
 	if root == nil {
 		return []string{}
 	}
@@ -180,7 +180,7 @@ func TestConnect(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			nt := Connect(tt.args.root)
-			got := makeWant(nt)
+			got := makeWantPBT(nt)
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Connect() = %v, want %v", got, tt.want)
 			}

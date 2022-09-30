@@ -1,23 +1,21 @@
 package dfs
 
-/*MaxAreaOfIsland return area of island as int */
+/*
+MaxAreaOfIsland return area of island as int
+leetCode
+Runtime: 20 ms, faster than 52.69% of Go online submissions for Max Area of Island.
+Memory Usage: 4.9 MB, less than 88.64% of Go online submissions for Max Area of Island.
+*/
 func MaxAreaOfIsland(grid [][]int) int {
 	maxValue := 0
 	for r := 0; r < len(grid); r++ {
 		for c := 0; c < len(grid[0]); c++ {
-			tmp := grid[r][c]
 			// -1 is discovered area
 			// 0 is water area
 			// 1 is land area
-			if tmp == -1 {
-				continue
-			} else if tmp == 0 {
-				grid[r][c] = -1
-			} else if tmp == 1 {
-				newMax := findLand(&grid, r, c)
-				if newMax > maxValue {
-					maxValue = newMax
-				}
+			newMax := findLand(&grid, r, c)
+			if newMax > maxValue {
+				maxValue = newMax
 			}
 		}
 	}
@@ -27,9 +25,7 @@ func MaxAreaOfIsland(grid [][]int) int {
 func findLand(grid *[][]int, r int, c int) int {
 
 	v := (*grid)[r][c]
-	if v != -1 {
-		(*grid)[r][c] = -1
-	}
+	(*grid)[r][c] = -1
 	if v == 0 || v == -1 {
 		return 0
 	}
